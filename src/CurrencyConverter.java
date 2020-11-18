@@ -1,5 +1,5 @@
 public class CurrencyConverter {
-    public double euroTOYen (double euro){
+    public double euroToYen (double euro){
         return euro*124;
     }
 }
