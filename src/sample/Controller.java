@@ -1,32 +1,30 @@
 package sample;
 
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
+/**
+ * @author Sophie Kadletz
+ * @version 18.11.2020
+ */
+
 public class Controller{
-    private CurrencyConverter cc;
+    //public CurrencyConverter cc;
+    public TextField euroText;
+    public TextField yenText;
 
-    @FXML
-    private TextField euroText;
-
-    @FXML
-    private TextField yenText;
-
-    @FXML
-    void doConvertion(ActionEvent event) {
-        try {
-            System.out.println(euroText.getText());
-            double euro = Double.parseDouble(euroText.getText());
-            yenText.setText(Double.toString(cc.euroToYen(euro)));
+    public void doConvertion()
+    {
+        double euro = 0;
+        try
+        {
+            euro = Double.parseDouble(euroText.getText());
         }
-        catch(Exception ex) {
+        catch(Exception ex)
+        {
             System.out.println("Geben Sie bitte einen numerischen Wert ein!");
         }
+        yenText.setText(Double.toString(new CurrencyConverter().euroToYen(euro)));
     }
 
-    public void setConverter(CurrencyConverter currencyConverter) {
-        cc = currencyConverter;
-    }
-
+    // public void setConverter(CurrencyConverter currencyConverter) {cc = currencyConverter;}
 }
