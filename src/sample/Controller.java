@@ -6,7 +6,7 @@ import javafx.scene.control.TextField;
 
 /**
  * @author Sophie Kadletz
- * @version 18.11.2020
+ * @version 23.11.2020
  */
 
 public class Controller{
@@ -31,7 +31,7 @@ public class Controller{
         } else {
             yenText.setText("--");
         }
-        //yenText.setText(new CurrencyConverter().currency);
+
     }
 
     @FXML

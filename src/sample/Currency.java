@@ -1,5 +1,10 @@
 package sample;
 
+/**
+ * @author Sophie Kadletz
+ * @version 23.11.2020
+ */
+
 public class Currency {
     private String sign;
     private double value;
@@ -8,18 +13,10 @@ public class Currency {
         return sign;
     }
 
-    public void setSign(String sign) {
-        this.sign = sign;
-    }
 
     public double getValue() {
         return value;
     }
-
-    public void setValue(double value) {
-        this.value = value;
-    }
-
 
 
     public Currency(String sign, double value) {
