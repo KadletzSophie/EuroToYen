@@ -1,5 +1,7 @@
 package sample;
 
+import javafx.fxml.FXML;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 
 /**
@@ -8,11 +10,13 @@ import javafx.scene.control.TextField;
  */
 
 public class Controller{
-    //public CurrencyConverter cc;
-    public TextField euroText;
-    public TextField yenText;
+    public CurrencyConverter cc;
+    @FXML private TextField euroText;
+    @FXML private TextField yenText;
+    @FXML private ChoiceBox currency_chbox;
 
-    public void doConvertion()
+    @FXML
+    private void doConvertion()
     {
         double euro = 0;
         try
@@ -26,5 +30,13 @@ public class Controller{
         yenText.setText(Double.toString(new CurrencyConverter().euroToYen(euro)));
     }
 
-    // public void setConverter(CurrencyConverter currencyConverter) {cc = currencyConverter;}
+    @FXML
+    private void initialize() {
+        //currency_chbox.getItems().removeAll(currency_chbox.getItems());
+        currency_chbox.getItems().addAll("Yen", "US-Dollar");
+        //Set default value
+        currency_chbox.setValue("Yen");
+        //currency_chbox.getSelectionModel().select(0);  default value is first value of ChoiceBox
+        cc = new CurrencyConverter();
+    }
 }

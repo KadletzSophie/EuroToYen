@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -22,6 +23,6 @@
       <TextField fx:id="euroText" prefHeight="25.0" prefWidth="130.0" GridPane.rowIndex="1" />
       <TextField fx:id="yenText" prefHeight="25.0" prefWidth="130.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
       <Label text="Euro" />
-      <Label text="Yen" GridPane.columnIndex="2" />
+      <ChoiceBox fx:id="currency_chbox" prefWidth="150.0" GridPane.columnIndex="2" />
    </children>
 </GridPane>
