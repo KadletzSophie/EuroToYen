@@ -10,29 +10,32 @@ import javafx.scene.control.TextField;
  */
 
 public class Controller{
-    public CurrencyConverter cc;
+    private CurrencyConverter cc;
     @FXML private TextField euroText;
     @FXML private TextField yenText;
     @FXML private ChoiceBox currency_chbox;
 
     @FXML
-    private void doConvertion()
-    {
+    private void doConvertion() {
         double euro = 0;
-        try
-        {
+        try {
             euro = Double.parseDouble(euroText.getText());
-        }
-        catch(Exception ex)
-        {
+        } catch (Exception ex) {
             System.out.println("Geben Sie bitte einen numerischen Wert ein!");
         }
-        yenText.setText(Double.toString(new CurrencyConverter().euroToYen(euro)));
+
+        String sign = currency_chbox.getValue().toString();
+        double tmp = cc.euroTo(euro, sign);
+        if (tmp != -1d) {
+            yenText.setText(Double.toString(tmp));
+        } else {
+            yenText.setText("--");
+        }
+        //yenText.setText(new CurrencyConverter().currency);
     }
 
     @FXML
     private void initialize() {
-        //currency_chbox.getItems().removeAll(currency_chbox.getItems());
         currency_chbox.getItems().addAll("Yen", "US-Dollar");
         //Set default value
         currency_chbox.setValue("Yen");

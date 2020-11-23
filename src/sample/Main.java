@@ -17,10 +17,6 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception
     {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        //FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
-        //Parent root = loader.load();
-        //Controller cc = loader.getController();
-        //cc.setConverter(new CurrencyConverter());
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
